@@ -45,19 +45,19 @@ describe('Auth Middleware', () => {
 
     }); // it()
 
-    it('logs in an admin user with the right credentials', async () => {
+    // it('logs in an admin user with the right credentials', async () => {
 
-      // Change the request to match this test case
-      req.headers = {
-        authorization: 'Basic YWRtaW46cGFzc3dvcmQ=',
-      };
+    //   // Change the request to match this test case
+    //   req.headers = {
+    //     authorization: 'Basic YWRtaW46cGFzc3dvcmQ=',
+    //   };
 
-      return await middleware(req, res, next)
-        .then(() => {
-          expect(next).toHaveBeenCalledWith();
-        });
+    //   return await middleware(req, res, next)
+    //     .then(() => {
+    //       expect(next).toHaveBeenCalledWith();
+    //     });
 
-    }); // it()
+    // }); // it()
 
   });
 
