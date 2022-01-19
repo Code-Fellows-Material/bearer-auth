@@ -22,4 +22,5 @@ jobs:
         npm i
         npm test
       env:
+        SECRET: toes
         CI: true
