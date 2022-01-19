@@ -1,10 +1,9 @@
 'use strict';
 
 const bcrypt = require('bcrypt');
-
 const jwt = require('jsonwebtoken');
 
-const APP_SECRET = process.env.APP_SECRET || 'supersecretstringfortesting'; 
+const APP_SECRET = process.env.APP_SECRET || 'toes'; 
 
 const userSchema = (sequelize, DataTypes) => {
   const model = sequelize.define('User', {
@@ -25,10 +24,8 @@ const userSchema = (sequelize, DataTypes) => {
 
   // Basic AUTH: Validating strings (username, password) 
   model.authenticateBasic = async function (username, password) {
-    console.log("In modelAB: u:", username, "p:", password)
-    const user = await this.findOne({ where: {username} });
-    console.log("In modelAB:", user);
-    const valid = await bcrypt.compare(password, user.password)
+    const user = await this.findOne({ where: { username } });
+    const valid = await bcrypt.compare(password, user.password);
     if (valid) { return user; }
     throw new Error('Invalid User');
   }
@@ -37,7 +34,7 @@ const userSchema = (sequelize, DataTypes) => {
   model.authenticateWithToken = async function (token) {
     try {
       const parsedToken = jwt.verify(token, APP_SECRET);
-      const user = this.findOne({where: { username: parsedToken.username }});
+      const user = await this.findOne({where: { username: parsedToken.username }});
       if (user) { return user; }
       throw new Error("User Not Found");
     } catch (e) {
