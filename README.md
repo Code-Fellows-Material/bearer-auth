@@ -1,18 +1,17 @@
 # bearer-auth
 
-Express server that implements Bearer Authentication, with signup and signin capabilities, using a Postgres database for storage. Bug testing demo for Code Fellows 401
+Express server that implements Basic Authentication, with signup and signin capabilities, using a Postgres database for storage. Bug fix demo testing - for Code Fellows 401
 
 
 ## HTTP Express Server deployed on Heroku.
 
-Deployed at: [bearer-auth](https://cf-bearer-auth.herokuapp.com)
-
+Deployed at: [bearer-auth](https://cf-bearer-auth.herokuapp.com/)
 
 ## Installation
 
 to install run `git clone git@github.com:Kellen-Linse/bearer-auth`
 
-`cd` into bearer-auth
+`cd` into bearer-autht
 
 run `npm install`
 
@@ -29,7 +28,7 @@ To start server run : `npm start`
   
 ## Features
 
-* Basic Auth
+* bearer auth
 
 * Object 
 
