@@ -3,8 +3,8 @@ name: Run Javascript Tests
 on: [push]
 
 jobs:
-    env:
-      SECRET: toes
+  env:
+    SECRET: toes
   build:
 
     runs-on: ubuntu-latest
@@ -24,5 +24,4 @@ jobs:
         npm i
         npm test
       env:
-        SECRET: toes
         CI: true
