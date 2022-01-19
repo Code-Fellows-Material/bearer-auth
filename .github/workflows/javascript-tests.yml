@@ -3,10 +3,9 @@ name: Run Javascript Tests
 on: [push]
 
 jobs:
-  env:
-    SECRET: toes
   build:
-
+    env:
+      SECRET: toes
     runs-on: ubuntu-latest
 
     strategy:
